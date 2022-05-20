@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 import { NopageFoundComponent } from './pages/nopage-found/nopage-found.component';
+import { AuthModule } from './auth/auth.module';
 
 const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./pages/pages.module').then( m => m.PagesModule),
   },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full' },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule),
+  },
+  { path: '', redirectTo: '/admin', pathMatch: 'full' },
   { path: '**', component: NopageFoundComponent },
 ];
 

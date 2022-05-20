@@ -7,6 +7,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NopageFoundComponent } from './nopage-found/nopage-found.component';
 import { SharedModule } from '../shared/shared.module';
 import { GraficasComponent } from './graficas/graficas.component';
+import { ProgressComponent } from './progress/progress.component';
+import { ComponentsModule } from '../components/components.module';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PormesasComponent } from './pormesas/pormesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
+
 
 
 @NgModule({
@@ -14,12 +20,17 @@ import { GraficasComponent } from './graficas/graficas.component';
     HomeComponent,
     DashboardComponent,
     NopageFoundComponent,
-    GraficasComponent
+    GraficasComponent,
+    ProgressComponent,
+    AccountSettingsComponent,
+    PormesasComponent,
+    RxjsComponent,
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
-    SharedModule
+    SharedModule,
+    ComponentsModule,
   ]
 })
 export class PagesModule { }
